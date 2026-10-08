@@ -1,0 +1,28 @@
+{
+  "name": "bb-plugin-hmm-suggest",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "bb": ">=0.42",
+    "bbPluginSdk": ">=0.4.47"
+  },
+  "bb": {
+    "name": "Hmm Suggest",
+    "description": "Tap-to-send quick reply suggestions under AI responses.",
+    "branding": {
+      "icon": "MessageSquareReply"
+    },
+    "server": "./server.ts",
+    "app": "./app.tsx"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.4.87",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}
