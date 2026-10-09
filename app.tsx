@@ -30,8 +30,13 @@ function Suggestions({ attributes, message }: PluginMessageDirectiveProps) {
           key={text}
           type="button"
           disabled={sent !== null}
+          draggable={sent === null}
+          onDragStart={(event) => {
+            event.dataTransfer.setData("text/plain", text);
+            event.dataTransfer.effectAllowed = "copy";
+          }}
           onClick={() => void send(text)}
-          className={`min-h-9 rounded-full border border-border px-3 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-accent disabled:cursor-default ${
+          className={`min-h-9 cursor-grab rounded-full border border-border px-3 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-accent disabled:cursor-default ${
             sent === text ? "bg-accent" : "bg-card disabled:opacity-50"
           }`}
         >
