@@ -56,7 +56,7 @@ bb plugin install path:.
 - Tapping a button calls the `send` RPC, which posts the text through
   `bb.sdk.threads.send` with `queue-if-active`, so it queues if the agent is
   still running. Buttons lock after one send.
-- Dragging a button drops its text into the prompt input, so you can edit or
-  add words before sending.
+- Dragging a button anywhere onto the prompt box appends its text to the
+  draft via `useComposer()`, so you can edit or add words before sending.
 - Instructions apply when a provider session starts, so existing threads pick
   them up only after their session restarts; new threads get them right away.
